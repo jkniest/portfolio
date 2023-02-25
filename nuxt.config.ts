@@ -4,6 +4,7 @@ export default defineNuxtConfig({
         '@nuxt/content',
         'nuxt-link-checker',
         '@nuxtjs/tailwindcss',
+        '@nuxtjs/color-mode',
         ['@nuxtjs/google-fonts', {
             families: {
                 'Barlow Condensed': [600],
@@ -32,5 +33,8 @@ export default defineNuxtConfig({
                 dark: 'github-dark'
             },
         }
+    },
+    colorMode: {
+        classSuffix: ''
     }
 })
