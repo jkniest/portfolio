@@ -27,6 +27,7 @@ export default defineNuxtConfig({
         }
     },
     image: {
+        provider: 'vercel',
         screens: {
             sm: 640,
             md: 768,
