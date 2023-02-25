@@ -4,6 +4,7 @@ export default defineNuxtConfig({
         '@nuxt/content',
         'nuxt-link-checker',
         '@nuxtjs/tailwindcss',
+        '@nuxtjs/color-mode',
         ['@nuxtjs/google-fonts', {
             families: {
                 'Barlow Condensed': [600],
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            host: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
+            host: process.env.APP_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
         }
     },
     content: {
@@ -32,5 +33,8 @@ export default defineNuxtConfig({
                 dark: 'github-dark'
             },
         }
+    },
+    colorMode: {
+        classSuffix: ''
     }
 })
