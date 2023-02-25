@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
         'nuxt-link-checker',
+        '@nuxtjs/tailwindcss',
         ['@nuxtjs/google-fonts', {
             families: {
                 'Barlow Condensed': [600],
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            host: process.env.NUXT_ENV_VERCEL_URL ? `https://${process.env.NUXT_ENV_VERCEL_URL}` : 'http://localhost:3000'
+            host: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
         }
     },
     content: {
