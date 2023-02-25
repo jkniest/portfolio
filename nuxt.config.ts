@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            host: 'http://localhost:3000'
+            host: process.env.NUXT_ENV_VERCEL_URL || 'http://localhost:3000'
         }
     },
     content: {
