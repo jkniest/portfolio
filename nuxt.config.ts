@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
-        'nuxt-link-checker'
+        'nuxt-link-checker',
+        '@nuxt/image-edge',
     ],
     typescript: {
         strict: true
@@ -23,6 +24,15 @@ export default defineNuxtConfig({
                 default: 'github-light',
                 dark: 'github-dark'
             },
+        }
+    },
+    image: {
+        screens: {
+            sm: 640,
+            md: 768,
+            lg: 1024,
+            xl: 1280,
+            '2xl': 1536,
         }
     }
 })
