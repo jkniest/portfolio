@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
-        'nuxt-link-checker'
+        'nuxt-link-checker',
+        ['@nuxtjs/google-fonts', {
+            families: {
+                'Barlow Condensed': [600],
+                'Montserrat': true
+            },
+            download: true
+        }]
     ],
     typescript: {
         strict: true
