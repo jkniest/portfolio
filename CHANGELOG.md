@@ -8,3 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added 
 - Initial project setup: Nuxt 3
+- Added sitemap
+
+### Packages
+- Added `nuxt` (v3.2.2)
+- Added `@nuxt/content` (v2.4.3)
+- Added `sitemap` (v7.1.1)
