@@ -1,16 +1,20 @@
 <template>
-    <h1>jkniest.de</h1>
+    <main class="p-10">
+        <h1 class="text-3xl">jkniest.de</h1>
 
-    <NuxtLink :to="{path: '/blog/shopware6/create-offer-plugin/01-preparations'}">Example Blog Post</NuxtLink>
+        <NuxtLink :to="{ path: '/blog/shopware6/create-offer-plugin/01-preparations' }" class="text-blue-600 block mt-3">
+            Example Blog Post
+        </NuxtLink>
+    </main>
 </template>
 
-<style>
+<style lang="postcss">
 h1 {
-    font-family: 'Barlow Condensed', sans-serif;
+    @apply font-heading;
     font-weight: bold;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    @apply font-content;
 }
 </style>
