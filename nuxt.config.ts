@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
-        '@nuxt/content'
+        '@nuxt/content',
+        'nuxt-link-checker'
     ],
     typescript: {
         strict: true
@@ -14,6 +15,14 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             host: 'http://localhost:3000'
+        }
+    },
+    content: {
+        highlight: {
+            theme: {
+                default: 'github-light',
+                dark: 'github-dark'
+            },
         }
     }
 })
