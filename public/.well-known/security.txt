@@ -1,0 +1,3 @@
+Contact: mailto:security@jkniest.de
+Preferred-Languages: de, en
+Canonical: https://jkniest.de/.well-known/security.txt
