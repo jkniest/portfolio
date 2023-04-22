@@ -20,3 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `@nuxtjs/color-mode` (v3.2.0)
 - Added `nuxt-og-image` (v1.5.8)
 - Added `@nuxt/devtools` (v0.4.1)
+- Added `eslint` (v8.39.0)
+- Addded `@nuxtjs/eslint-config-typescript` (v12.0.0)
+- Addded `typescript` (v5.0.4)
