@@ -18,3 +18,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `@nuxtjs/google-fonts` (v3.0.0)
 - Added `@nuxtjs/tailwindcss` (v6.6.6)
 - Added `@nuxtjs/color-mode` (v3.2.0)
+- Added `nuxt-og-image` (v1.5.8)
+- Added `@nuxt/devtools` (v0.4.1)

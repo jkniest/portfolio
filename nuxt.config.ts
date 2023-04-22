@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
         'nuxt-og-image',
+        '@nuxt/devtools',
         ['@nuxtjs/google-fonts', {
             families: {
                 'Barlow Condensed': [600],
