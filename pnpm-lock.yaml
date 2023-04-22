@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@formkit/auto-animate': 1.0.0-beta.6
   '@nuxt/content': ^2.6.0
   '@nuxt/devtools': ^0.4.1
   '@nuxtjs/color-mode': ^3.2.0
@@ -15,6 +16,7 @@ specifiers:
   typescript: ^5.0.4
 
 devDependencies:
+  '@formkit/auto-animate': 1.0.0-beta.6
   '@nuxt/content': 2.6.0
   '@nuxt/devtools': 0.4.1_nuxt@3.4.2
   '@nuxtjs/color-mode': 3.2.0
@@ -646,6 +648,10 @@ packages:
   /@eslint/js/8.39.0:
     resolution: {integrity: sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@formkit/auto-animate/1.0.0-beta.6:
+    resolution: {integrity: sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w==}
     dev: true
 
   /@gar/promisify/1.1.3:
