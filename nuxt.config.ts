@@ -5,6 +5,7 @@ export default defineNuxtConfig({
         'nuxt-link-checker',
         '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
+        'nuxt-og-image',
         ['@nuxtjs/google-fonts', {
             families: {
                 'Barlow Condensed': [600],
@@ -23,7 +24,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            host: process.env.APP_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
+            siteUrl: process.env.APP_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
         }
     },
     content: {
@@ -39,5 +40,11 @@ export default defineNuxtConfig({
     },
     experimental: {
         viewTransition: true
+    },
+    ogImage: {
+        fonts: [
+            'Barlow Condensed:600',
+            'Montserrat:200'
+        ]
     }
 })
