@@ -6,6 +6,10 @@
             Example Blog Post
         </NuxtLink>
 
+        <NuxtLink :to="{ path: '/speaking' }" class="text-blue-600 block mt-3">
+            Speaking
+        </NuxtLink>
+
         <select v-model="$colorMode.preference">
             <option value="system">System</option>
             <option value="light">Light</option>
@@ -19,6 +23,7 @@
 h1 {
     @apply font-heading;
     font-weight: bold;
+    view-transition-name: title;
 }
 
 body {
