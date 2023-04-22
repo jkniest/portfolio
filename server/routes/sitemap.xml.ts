@@ -5,7 +5,7 @@ export default defineEventHandler(async(event) => {
     const config = useRuntimeConfig();
 
     const docs = await serverQueryContent(event).find();
-    const sitemap = new SitemapStream({hostname: config.public.host});
+    const sitemap = new SitemapStream({hostname: config.public.siteUrl});
 
     // Add all static sites
     sitemap.write({ url: '/', changefreq: 'monthly' });
