@@ -36,5 +36,8 @@ export default defineNuxtConfig({
     },
     colorMode: {
         classSuffix: ''
+    },
+    experimental: {
+        viewTransition: true
     }
 })
