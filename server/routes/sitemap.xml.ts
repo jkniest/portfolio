@@ -1,23 +1,23 @@
+import { SitemapStream, streamToPromise } from 'sitemap';
 import { serverQueryContent } from '#content/server';
-import {SitemapStream, streamToPromise} from 'sitemap';
 
-export default defineEventHandler(async(event) => {
-    const config = useRuntimeConfig();
+export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig();
 
-    const docs = await serverQueryContent(event).find();
-    const sitemap = new SitemapStream({hostname: config.public.siteUrl});
+  const docs = await serverQueryContent(event).find();
+  const sitemap = new SitemapStream({ hostname: config.public.siteUrl });
 
-    // Add all static sites
-    sitemap.write({ url: '/', changefreq: 'monthly' });
+  // Add all static sites
+  sitemap.write({ url: '/', changefreq: 'monthly' });
 
-    docs.forEach((doc) => {
-        sitemap.write({ 
-            url: doc._path,
-            changefreq: 'monthly',
-        });
+  docs.forEach((doc) => {
+    sitemap.write({
+      url: doc._path,
+      changefreq: 'monthly'
     });
+  });
 
-    sitemap.end();
+  sitemap.end();
 
-    return streamToPromise(sitemap);
+  return streamToPromise(sitemap);
 });
