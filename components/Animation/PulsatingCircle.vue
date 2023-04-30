@@ -2,9 +2,11 @@
 const props = withDefaults(defineProps<{
     size?: number;
     innerSize?: number;
+    color?: string|null;
 }>(), {
     size: 70,
-    innerSize: 60
+    innerSize: 60,
+    color: null,
 });
 
 const sizeInPx = computed(() => `${props.size}px`);
@@ -14,10 +16,10 @@ const innerSizeInPx = computed(() => `${props.innerSize}px`);
 <template>
     <div :class="`relative rounded-full outer-circle`">
         <slot class="inner-circle" />
-        <span class="absolute rounded-full bg-gradient-to-b dark:from-amber-50 from-amber-400 dark:via-orange-200 via-orange-200 dark:to-amber-500 to-amber-600 blur-md"></span>
-        <span class="absolute rounded-full bg-gradient-to-b dark:from-amber-50 from-amber-400 dark:via-orange-200 via-orange-200 dark:to-amber-500 to-amber-600 blur-xl"></span>
-        <span class="absolute rounded-full bg-gradient-to-b dark:from-amber-50 from-amber-400 dark:via-orange-200 via-orange-200 dark:to-amber-500 to-amber-600 blur-3xl"></span>
-        <span class="absolute rounded-full bg-gradient-to-b dark:from-amber-50 from-amber-400 dark:via-orange-200 via-orange-200 dark:to-amber-500 to-amber-600"></span>
+        <span :class="(color ? `from-${color}-50 via-${color}-200 to-${color}-500` : 'dark:from-amber-50 from-amber-400 dark:via-amber-200 via-amber-200 dark:to-amber-500 to-amber-600') + ` absolute rounded-full bg-gradient-to-b blur-md transition-all`"></span>
+        <span :class="(color ? `from-${color}-50 via-${color}-200 to-${color}-500` : 'dark:from-amber-50 from-amber-400 dark:via-amber-200 via-amber-200 dark:to-amber-500 to-amber-600') + ` absolute rounded-full bg-gradient-to-b blur-xl transition-all`"></span>
+        <span :class="(color ? `from-${color}-50 via-${color}-200 to-${color}-500` : 'dark:from-amber-50 from-amber-400 dark:via-amber-200 via-amber-200 dark:to-amber-500 to-amber-600') + ` absolute rounded-full bg-gradient-to-b blur-3xl transition-all`"></span>
+        <span :class="(color ? `from-${color}-50 via-${color}-200 to-${color}-500` : 'dark:from-amber-50 from-amber-400 dark:via-amber-200 via-amber-200 dark:to-amber-500 to-amber-600') + ` absolute rounded-full bg-gradient-to-b transition-all`"></span>
     </div>
 </template>
 

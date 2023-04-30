@@ -4,7 +4,7 @@ interface Particle {
     y: number;
     dx: number;
     dy: number;
-    trails: { x: number, y: number }[];
+    trail: { x: number, y: number }[];
 }
 
 const props = withDefaults(defineProps<{
@@ -38,9 +38,11 @@ onMounted(() => {
         });
     }
 
-    const ctx = canvas.value.getContext('2d');
-    canvas.value.width = width.value;
-    canvas.value.height = height.value;
+    if(canvas.value) {
+        canvas.value.width = width.value;
+        canvas.value.height = height.value;
+    }
+    
     animationLoop();
 });
 
@@ -88,7 +90,10 @@ function reflect(p1: Particle, p2: Particle): void {
 }
 
 function drawParticles() {
-    const ctx = canvas.value.getContext('2d');
+    const ctx = canvas.value?.getContext('2d');
+    if (!ctx) {
+        return;
+    }
 
     ctx.clearRect(0, 0, width.value, height.value);
     particles.value.forEach((particle) => {
@@ -145,7 +150,7 @@ function animationLoop() {
 </script>
 
 <template>
-    <canvas class="fixed inset-0" ref="canvas">
+    <canvas class="fixed inset-0 pointer-events-none" ref="canvas">
 
     </canvas>
 </template>

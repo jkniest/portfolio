@@ -10,7 +10,7 @@ export default <Partial<Config>>{
         primary: '#ff34a3'
       },
       borderRadius: {
-        'drawn': '255px 15px 225px 15px/15px 225px 15px 255px'
+        drawn: '255px 15px 225px 15px/15px 225px 15px 255px'
       }
     },
     fontFamily: {
@@ -19,7 +19,7 @@ export default <Partial<Config>>{
     }
   },
   plugins: [
-    plugin(function ({ matchUtilities, theme }) {
+    plugin(function ({ matchUtilities }) {
       matchUtilities({
         'view-transition': (value: string) => {
           return {
