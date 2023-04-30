@@ -11,15 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added sitemap
 
 ### Packages
-- Added `nuxt` (v3.4.2)
+- Added `nuxt` (v3.4.3)
 - Added `@nuxt/content` (v2.6.0)
 - Added `sitemap` (v7.1.1)
 - Added `nuxt-link-checker` (v1.0.4)
 - Added `@nuxtjs/google-fonts` (v3.0.0)
-- Added `@nuxtjs/tailwindcss` (v6.6.6)
+- Added `@nuxtjs/tailwindcss` (v6.6.7)
 - Added `@nuxtjs/color-mode` (v3.2.0)
-- Added `nuxt-og-image` (v1.5.8)
-- Added `@nuxt/devtools` (v0.4.1)
+- Added `nuxt-og-image` (v1.5.9)
+- Added `@nuxt/devtools` (v0.4.5)
 - Added `eslint` (v8.39.0)
 - Added `@nuxtjs/eslint-config-typescript` (v12.0.0)
 - Added `typescript` (v5.0.4)
