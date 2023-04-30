@@ -5,7 +5,7 @@ const props = withDefaults(defineProps<{
     size?: number;
     side?: CubeSide;
 }>(), {
-    size: 800,
+    size: 650,
     side: 'front',
 });
 
@@ -43,12 +43,14 @@ watch(() => props.side, (side) => {
     <div class="grid place-items-center mt-24">
         <div :class="`scene active-${side}`">
             <div :class="`cube w-full h-full relative transition-transform duration-1000 show-${side}`">
-                <div class="cube__face cube__face--front bg-amber-200">Introduction</div>
-                <div class="cube__face cube__face--back bg-emerald-200">Blog</div>
-                <div class="cube__face cube__face--right bg-violet-200">Speaking</div>
-                <div class="cube__face cube__face--left bg-rose-200">GameDev</div>
-                <div class="cube__face cube__face--top bg-sky-200">Open Source</div>
-                <div class="cube__face cube__face--bottom bg-slate-200">Work</div>
+                <div class="cube__face cube__face--front bg-amber-200 bg-opacity-90">
+                    <slot name="front" />
+                </div>
+                <div class="cube__face cube__face--back bg-emerald-200 bg-opacity-90">Blog</div>
+                <div class="cube__face cube__face--right bg-violet-200 bg-opacity-90">Speaking</div>
+                <div class="cube__face cube__face--left bg-rose-200 bg-opacity-90">GameDev</div>
+                <div class="cube__face cube__face--top bg-sky-200 bg-opacity-90">Open Source</div>
+                <div class="cube__face cube__face--bottom bg-slate-200 bg-opacity-90">Work</div>
             </div>
         </div>
     </div>
@@ -114,7 +116,6 @@ watch(() => props.side, (side) => {
     width: v-bind(sizeInPx);
     height: v-bind(sizeInPx);
 
-    font-size: 2.5em;
     transform: perspective(calc(v-bind(sizeInPx) * 2.5)) translateZ(250px);
 }
 

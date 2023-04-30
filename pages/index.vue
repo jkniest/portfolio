@@ -5,7 +5,7 @@ definePageMeta({
   colorMode: 'dark'
 });
 
-const color = ref<string | null>(null);
+const color = ref<string | null>('amber');
 const side = ref<CubeSide>('front');
 </script>
 
@@ -14,28 +14,35 @@ const side = ref<CubeSide>('front');
     <NavigationHeader :color="color" />
 
     <main>
-      <div class="flex gap-2">
-        <button class="bg-pink-50 p-4" @click="side = 'front'">
-          intro
-        </button>
-        <button class="bg-pink-50 p-4" @click="side = 'top'">
-          open source
-        </button>
-        <button class="bg-pink-50 p-4" @click="side = 'back'">
-          Blog
-        </button>
-        <button class="bg-pink-50 p-4" @click="side = 'right'">
-          Speaking
-        </button>
-        <button class="bg-pink-50 p-4" @click="side = 'left'">
-          Game Dev
-        </button>
-        <button class="bg-pink-50 p-4" @click="side = 'bottom'">
-          Work
-        </button>
-      </div>
+      <div class="flex container mx-auto gap-32 items-center">
+        <div class="flex flex-col gap-4 w-full">
+          <NavigationCubeButton :active="side === 'front'" :color="color" @click="side = 'front'">
+            Hello there!
+          </NavigationCubeButton>
+          <NavigationCubeButton :active="side === 'back'" :color="color" @click="side = 'back'">
+            Blog
+          </NavigationCubeButton>
+          <NavigationCubeButton :active="side === 'top'" :color="color" @click="side = 'top'">
+            Open Source
+          </NavigationCubeButton>
+          <NavigationCubeButton :active="side === 'right'" :color="color" @click="side = 'right'">
+            Speaking
+          </NavigationCubeButton>
+          <NavigationCubeButton :active="side === 'left'" :color="color" @click="side = 'left'">
+            Game Dev
+          </NavigationCubeButton>
+          <NavigationCubeButton :active="side === 'bottom'" :color="color" @click="side = 'bottom'">
+            Work
+          </NavigationCubeButton>
+        </div>
 
-      <AnimationCube :side="side" @side-updated="(e) => color = e" />
+        <AnimationCube :side="side" @side-updated="(e) => color = e">
+          <template #front>
+            <HomepageIntroduction @open-work="side = 'bottom'" />
+          </template>
+        </AnimationCube>
+        <div />
+      </div>
     </main>
   </div>
 </template>
