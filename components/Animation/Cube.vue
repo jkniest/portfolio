@@ -49,7 +49,9 @@ watch(() => props.side, (side) => {
                 <div class="cube__face cube__face--back bg-emerald-200 bg-opacity-90">Blog</div>
                 <div class="cube__face cube__face--right bg-violet-200 bg-opacity-90">Speaking</div>
                 <div class="cube__face cube__face--left bg-rose-200 bg-opacity-90">GameDev</div>
-                <div class="cube__face cube__face--top bg-sky-200 bg-opacity-90">Open Source</div>
+                <div class="cube__face cube__face--top bg-sky-200 bg-opacity-90">
+                    <slot name="top" />
+                </div>
                 <div class="cube__face cube__face--bottom bg-slate-200 bg-opacity-90">Work</div>
             </div>
         </div>

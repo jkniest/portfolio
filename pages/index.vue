@@ -40,6 +40,9 @@ const side = ref<CubeSide>('front');
           <template #front>
             <HomepageIntroduction @open-work="side = 'bottom'" />
           </template>
+          <template #top>
+            <HomepageOpenSource />
+          </template>
         </AnimationCube>
         <div />
       </div>

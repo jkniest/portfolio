@@ -31,12 +31,13 @@ const openWork = () => emits('open-work');
         </p>
 
         <p class="text-lg mt-8">
-            During my downtime, I like to kick back with some video games, tinker with my own game creations, contribute to
-            open-source projects, and sometimes write a blog post or two. When I'm not doing any of that, you'll probably
-            find me chilling with friends over a cocktail or a cold beer.
+            In my spare time, I love unwinding with video games, diving into board games with friends, participating in
+            open-source projects, and occasionally penning a blog post. When I'm not immersed in these activities, you can
+            often catch me enjoying cocktails or a cold beer with my buddies.
         </p>
 
         <div class="text-right">
-            <a href="https://twitter.com/@j_kniest" class="text-sky-600 border-b border-sky-600" target="_blank">Follow me on Twitter</a>
-        </div>
+            <a href="https://twitter.com/@j_kniest" class="text-sky-600 border-b border-sky-600" target="_blank">Follow me
+                on Twitter</a>
+    </div>
 </div></template>
