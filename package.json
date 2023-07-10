@@ -23,5 +23,8 @@
     "nuxt-og-image": "^1.5.8",
     "sitemap": "^7.1.1",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@nuxthq/studio": "^0.13.3"
   }
 }
