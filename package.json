@@ -7,7 +7,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "eslint": "eslint . --fix",
-    "typecheck": "pnpm dlx nuxi typecheck"
+    "typecheck": "pnpm dlx nuxi typecheck",
+    "test": "pnpm run eslint && pnpm run typecheck"
   },
   "devDependencies": {
     "@formkit/auto-animate": "1.0.0-beta.6",

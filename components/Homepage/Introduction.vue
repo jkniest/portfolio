@@ -28,7 +28,7 @@ const openWork = () => emits('open-work');
 
     <p class="text-lg mt-8">
       Fast forward to today, and I'm grateful to have turned my hobby into a fulfilling career. I currently hold the
-      position of Head of Development at basecom, where I continue to learn and grow in my professional journey. <a
+      position of Head of Development Frontend at basecom, where I continue to learn and grow in my professional journey. <a
         href="#"
         class="text-sky-600 border-b border-sky-600"
         @click.prevent="openWork"
