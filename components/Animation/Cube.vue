@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { PageColor } from 'stores/ColorStore';
+
 export type CubeSide = 'front' | 'back' | 'left' | 'right' | 'top' | 'bottom';
 
 const props = withDefaults(defineProps<{
@@ -10,12 +12,12 @@ const props = withDefaults(defineProps<{
 });
 
 const emits = defineEmits<{
-  'side-updated': [color: string]
+  'side-updated': [color: PageColor]
 }>();
 
 const sizeInPx = computed(() => `${props.size}px`);
 
-watch(() => props.side, (side) => {
+watch(() => props.side, () => {
   const color = {
     front: 'amber',
     top: 'sky',
@@ -23,9 +25,9 @@ watch(() => props.side, (side) => {
     right: 'violet',
     left: 'rose',
     bottom: 'slate'
-  }[props.side] ?? 'text-white';
+  }[props.side] ?? 'amber';
 
-  emits('side-updated', color);
+  emits('side-updated', color as PageColor);
 });
 
 /**
@@ -50,7 +52,7 @@ watch(() => props.side, (side) => {
           <slot name="back" />
         </div>
         <div class="cube__face cube__face--right bg-violet-200 bg-opacity-90">
-          Speaking
+          <slot name="right" />
         </div>
         <div class="cube__face cube__face--left bg-rose-200 bg-opacity-90">
           GameDev

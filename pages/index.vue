@@ -53,6 +53,9 @@ function updateColor (color: PageColor) {
       <template #back>
         <HomepageBlog />
       </template>
+      <template #right>
+        <HomepageSpeaking />
+      </template>
     </AnimationCube>
   </div>
 </template>
