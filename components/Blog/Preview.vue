@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ParsedContent } from '@nuxt/content/dist/runtime/types';
+import { ParsedContent } from 'node_modules/@nuxt/content/dist/runtime/types';
 
 const props = defineProps<{
   post: Pick<ParsedContent, 'title' | 'description' | '_path' | 'tag'>;
@@ -8,6 +8,8 @@ const props = defineProps<{
 function open (): void {
   useRouter().push({ path: props.post._path ?? '' });
 }
+
+const title = computed(() => props.post.title?.replace(' – Jordan Kniest', ''));
 </script>
 
 <template>
@@ -15,7 +17,7 @@ function open (): void {
     class="p-4 border-4 rounded-drawn border-emerald-400 hover:border-emerald-600 cursor-pointer hover:bg-emerald-300"
     @click="open"
   >
-    <strong v-text="post.title" />
+    <strong v-text="title" />
     <p v-text="post.description" />
 
     <hr class="my-3 border-emerald-500">

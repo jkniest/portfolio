@@ -40,7 +40,7 @@ const innerSizeInPx = computed(() => `${props.innerSize}px`);
     filter: blur(150px);
 } */
 
-/deep/ .inner-circle {
+:deep(.inner-circle) {
     width: v-bind(innerSizeInPx);
     height: v-bind(innerSizeInPx);
     position: absolute;

@@ -13,10 +13,20 @@ export default defineNuxtConfig({
         Montserrat: true
       },
       download: true
+    }],
+    ['@pinia/nuxt', {
+      autoImports: [
+        'defineStore'
+      ]
     }]
   ],
   typescript: {
-    strict: true
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        moduleResolution: 'bundler'
+      }
+    }
   },
   nitro: {
     prerender: {
@@ -40,12 +50,19 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   experimental: {
-    viewTransition: true
+    viewTransition: true,
+    typedPages: true
   },
   ogImage: {
     fonts: [
       'Barlow Condensed:600',
       'Montserrat:200'
     ]
+  },
+  imports: {
+    dirs: ['stores']
+  },
+  routeRules: {
+    '/blog/**': { isr: 3000 }
   }
 });

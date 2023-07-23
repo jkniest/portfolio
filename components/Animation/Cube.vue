@@ -2,15 +2,15 @@
 export type CubeSide = 'front' | 'back' | 'left' | 'right' | 'top' | 'bottom';
 
 const props = withDefaults(defineProps<{
-    size?: number;
-    side?: CubeSide;
+  size?: number;
+  side?: CubeSide;
 }>(), {
   size: 650,
   side: 'front'
 });
 
 const emits = defineEmits<{
-    (e: 'side-updated', color: string): void;
+  'side-updated': [color: string]
 }>();
 
 const sizeInPx = computed(() => `${props.size}px`);
@@ -71,86 +71,86 @@ watch(() => props.side, (side) => {
 |   Fixed values   |
 *******************/
 .scene {
-    width: v-bind(sizeInPx);
-    height: v-bind(sizeInPx);
-    perspective: calc(v-bind(sizeInPx) * 3);
+  width: v-bind(sizeInPx);
+  height: v-bind(sizeInPx);
+  perspective: calc(v-bind(sizeInPx) * 3);
 }
 
 .cube {
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .scene:before,
 .scene:after {
-    content: '';
-    position: absolute;
-    left: 50px;
-    top: 50px;
-    content: '';
-    background-size: 50%;
-    width: calc(100% - 100px);
-    height: calc(100% - 100px);
-    z-index: -1;
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  content: '';
+  background-size: 50%;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  z-index: -1;
 }
 
 .scene:after {
-    filter: blur(120px);
+  filter: blur(120px);
 }
 
 .cube.show-front {
-    transform: translateZ(calc(v-bind(sizeInPx) / -2));
+  transform: translateZ(calc(v-bind(sizeInPx) / -2));
 }
 
 .cube.show-right {
-    transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateY(-90deg);
+  transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateY(-90deg);
 }
 
 .cube.show-back {
-    transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateY(-180deg);
+  transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateY(-180deg);
 }
 
 .cube.show-left {
-    transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateY(90deg);
+  transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateY(90deg);
 }
 
 .cube.show-top {
-    transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateX(-90deg);
+  transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateX(-90deg);
 }
 
 .cube.show-bottom {
-    transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateX(90deg);
+  transform: translateZ(calc(v-bind(sizeInPx) / -2)) rotateX(90deg);
 }
 
 .cube__face {
-    position: absolute;
-    width: v-bind(sizeInPx);
-    height: v-bind(sizeInPx);
+  position: absolute;
+  width: v-bind(sizeInPx);
+  height: v-bind(sizeInPx);
 
-    transform: perspective(calc(v-bind(sizeInPx) * 2.5)) translateZ(250px);
+  transform: perspective(calc(v-bind(sizeInPx) * 2.5)) translateZ(250px);
 }
 
 .cube__face--front {
-    transform: rotateY(0deg) translateZ(calc(v-bind(sizeInPx) / 2));
+  transform: rotateY(0deg) translateZ(calc(v-bind(sizeInPx) / 2));
 }
 
 .cube__face--back {
-    transform: rotateY(180deg) translateZ(calc(v-bind(sizeInPx) / 2));
+  transform: rotateY(180deg) translateZ(calc(v-bind(sizeInPx) / 2));
 }
 
 .cube__face--top {
-    transform: rotateX(90deg) translateZ(calc(v-bind(sizeInPx) / 2));
+  transform: rotateX(90deg) translateZ(calc(v-bind(sizeInPx) / 2));
 }
 
 .cube__face--right {
-    transform: rotateY(90deg) translateZ(calc(v-bind(sizeInPx) / 2));
+  transform: rotateY(90deg) translateZ(calc(v-bind(sizeInPx) / 2));
 }
 
 .cube__face--left {
-    transform: rotateY(-90deg) translateZ(calc(v-bind(sizeInPx) / 2));
+  transform: rotateY(-90deg) translateZ(calc(v-bind(sizeInPx) / 2));
 }
 
 .cube__face--bottom {
-    transform: rotateX(-90deg) translateZ(calc(v-bind(sizeInPx) / 2));
+  transform: rotateX(-90deg) translateZ(calc(v-bind(sizeInPx) / 2));
 }
 
 /*******************
@@ -158,8 +158,8 @@ watch(() => props.side, (side) => {
 *******************/
 .scene.active-front:before,
 .scene.active-front:after {
-    /** 100 400 700 */
-    background: linear-gradient(0deg, #fef9c3, #facc15, #a16207);
+  /** 100 400 700 */
+  background: linear-gradient(0deg, #fef9c3, #facc15, #a16207);
 }
 
 /*******************
@@ -167,8 +167,8 @@ watch(() => props.side, (side) => {
 *******************/
 .scene.active-top:before,
 .scene.active-top:after {
-    /** 100 400 700 */
-    background: linear-gradient(0deg, #e0f2fe, #38bdf8, #0369a1);
+  /** 100 400 700 */
+  background: linear-gradient(0deg, #e0f2fe, #38bdf8, #0369a1);
 }
 
 /*******************
@@ -176,8 +176,8 @@ watch(() => props.side, (side) => {
 *******************/
 .scene.active-back:before,
 .scene.active-back:after {
-    /** 100 400 700 */
-    background: linear-gradient(0deg, #d1fae5, #34d399, #047857);
+  /** 100 400 700 */
+  background: linear-gradient(0deg, #d1fae5, #34d399, #047857);
 }
 
 /*******************
@@ -185,8 +185,8 @@ watch(() => props.side, (side) => {
 *******************/
 .scene.active-right:before,
 .scene.active-right:after {
-    /** 100 400 700 */
-    background: linear-gradient(0deg, #ede9fe, #a78bfa, #6d28d9);
+  /** 100 400 700 */
+  background: linear-gradient(0deg, #ede9fe, #a78bfa, #6d28d9);
 }
 
 /*******************
@@ -194,8 +194,8 @@ watch(() => props.side, (side) => {
 *******************/
 .scene.active-left:before,
 .scene.active-left:after {
-    /** 100 400 700 */
-    background: linear-gradient(0deg, #ffe4e6, #fb7185, #be123c);
+  /** 100 400 700 */
+  background: linear-gradient(0deg, #ffe4e6, #fb7185, #be123c);
 }
 
 /*******************
@@ -203,7 +203,7 @@ watch(() => props.side, (side) => {
 *******************/
 .scene.active-bottom:before,
 .scene.active-bottom:after {
-    /** 100 400 700 */
-    background: linear-gradient(0deg, #f1f5f9, #94a3b8, #334155);
+  /** 100 400 700 */
+  background: linear-gradient(0deg, #f1f5f9, #94a3b8, #334155);
 }
 </style>

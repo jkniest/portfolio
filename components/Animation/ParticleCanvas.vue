@@ -24,6 +24,9 @@ const width = ref<number>(0);
 const height = ref<number>(0);
 const particles = ref<Particle[]>([]);
 
+const colorStore = useColorStore();
+const color = computed(() => colorStore.currentColor);
+
 onMounted(() => {
   width.value = window.innerWidth;
   height.value = window.innerHeight;
@@ -44,6 +47,17 @@ onMounted(() => {
   }
 
   animationLoop();
+});
+
+const rgbColor = computed(() => {
+  return {
+    amber: '251, 191, 36',
+    sky: '056, 189, 248',
+    emerald: '52, 211, 153',
+    violet: '167, 139, 250',
+    rose: '251, 113, 133',
+    slate: '148, 163, 184'
+  }[color.value] ?? '255, 255, 255';
 });
 
 function capVelocity (particle: Particle): void {
@@ -102,7 +116,7 @@ function drawParticles () {
       const opacity = 0.5 - progress;
 
       ctx.beginPath();
-      ctx.strokeStyle = `rgba(251, 191, 36, ${opacity})`;
+      ctx.strokeStyle = `rgba(${rgbColor.value}, ${opacity})`;
       ctx.lineWidth = 1.3;
       ctx.moveTo(particle.trail[i].x, particle.trail[i].y);
       ctx.lineTo(particle.trail[i + 1].x, particle.trail[i + 1].y);

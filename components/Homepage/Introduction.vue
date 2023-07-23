@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const emits = defineEmits<{
-    (e: 'open-work'): void;
+    'open-work': []
 }>();
 
 const openWork = () => emits('open-work');
