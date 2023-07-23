@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { CubeSide } from '@/components/Animation/Cube.vue';
+import { PageColor } from 'stores/ColorStore';
 
 definePageMeta({
   colorMode: 'dark'
@@ -9,8 +10,12 @@ const side = ref<CubeSide>('front');
 const colorStore = useColorStore();
 const color = computed(() => colorStore.currentColor);
 
-function updateColor (color: string) {
-  useColorStore().currentColor = color;
+onMounted(() => {
+  colorStore.currentColor = 'amber';
+});
+
+function updateColor (color: PageColor) {
+  colorStore.currentColor = color;
 }
 
 </script>
