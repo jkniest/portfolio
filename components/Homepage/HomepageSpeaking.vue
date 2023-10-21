@@ -1,11 +1,4 @@
-<script setup lang="ts">
-const queryBuilder = queryContent('speaking')
-  .limit(2)
-  .only(['title', 'description', '_path', '_id', 'tag', 'location'])
-  .sort({ publishDate: -1 });
-
-const { data } = await useAsyncData('newest-speaking-gigs', () => queryBuilder.find());
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="p-12">
@@ -20,7 +13,7 @@ const { data } = await useAsyncData('newest-speaking-gigs', () => queryBuilder.f
     </p>
 
     <div class="mt-4 space-y-4">
-      <SpeakingPreview v-for="talk in data" :key="talk._id" :talk="talk" />
+      <SpeakingPreview />
     </div>
 
     <div class="text-center m-10">

@@ -1,9 +1,4 @@
 <script lang="ts" setup>
-const emits = defineEmits<{
-    'open-work': []
-}>();
-
-const openWork = () => emits('open-work');
 </script>
 
 <template>
@@ -31,7 +26,6 @@ const openWork = () => emits('open-work');
       position of Head of Development Frontend at basecom, where I continue to learn and grow in my professional journey. <a
         href="#"
         class="text-sky-600 border-b border-sky-600"
-        @click.prevent="openWork"
       >Learn more</a>
     </p>
 

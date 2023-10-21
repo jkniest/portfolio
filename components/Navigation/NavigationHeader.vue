@@ -27,6 +27,9 @@ const color = computed(() => colorStore.currentColor);
       <NavigationLink :color="color" path="/blog">
         Blog
       </NavigationLink>
+      <NavigationLink :color="color" path="/open-source">
+        Open Source
+      </NavigationLink>
       <NavigationLink :color="color" path="/speaking">
         Speaking
       </NavigationLink>
