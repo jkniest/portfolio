@@ -5,3 +5,4 @@ export const useColorStore = defineStore('color', () => {
 
   return { currentColor };
 });
+

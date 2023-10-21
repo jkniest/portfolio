@@ -43,10 +43,6 @@ const innerSizeInPx = computed(() => `${props.innerSize}px`);
   width: v-bind(sizeInPx);
 }
 
-/* .outer-circle span:nth-child(4) {
-    filter: blur(150px);
-} */
-
 :deep(.inner-circle) {
   width: v-bind(innerSizeInPx);
   height: v-bind(innerSizeInPx);

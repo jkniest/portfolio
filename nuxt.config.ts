@@ -18,7 +18,8 @@ export default defineNuxtConfig({
       autoImports: [
         'defineStore'
       ]
-    }]
+    }],
+    'nuxt-icon'
   ],
   typescript: {
     strict: true,

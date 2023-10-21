@@ -25,10 +25,6 @@ const borderInactiveColors = computed(() => {
 
     return `border-transparent hover:border-${props.color}-200`;
 });
-
-/**
- * text-amber-200 border-amber-200 hover:border-amber-200
- */
 </script>
 
 <template>
