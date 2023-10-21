@@ -12,9 +12,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col container mx-auto gap-8 items-center">
-    <HomepageIntroduction />
+  <HomepageIntroduction />
 
+  <div class="flex flex-col container mx-auto gap-8 items-center">
     <HomepageOpenSource />
 
     <HomepageSpeaking />
